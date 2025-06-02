@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Vector2 movement;
 
     private void Update()
@@ -19,5 +20,27 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        FlipRotation();
+    }
+
+    private void FlipRotation()
+    {
+        if (movement.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if(movement.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        //Alternative solution
+        /*if (movement.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(movement.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }*/
     }
 }
