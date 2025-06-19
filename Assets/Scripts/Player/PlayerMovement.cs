@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private PlayerAnimation animation;
     private Vector2 movement;
 
     private void Update()
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement = movement.normalized;
+        animation.OnMove((int) movement.magnitude);
     }
 
     private void FixedUpdate()
