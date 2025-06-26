@@ -10,4 +10,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetInteger("Speed", speed);
     }
+
+    public void SetDeadState(bool isDead)
+    {
+        animator.SetBool("IsDead", isDead);
+    }
 }

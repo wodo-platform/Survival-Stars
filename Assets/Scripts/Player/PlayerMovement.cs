@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private PlayerAnimation animation;
+    [SerializeField] private PlayerHealth playerHealth;
     private Vector2 movement;
 
     private void Update()
@@ -21,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(playerHealth.IsDead)
+            return;
         rigidBody.MovePosition(rigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
         FlipRotation();
     }
