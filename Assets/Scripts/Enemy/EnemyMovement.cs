@@ -4,6 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Animator animator;
     
     private Transform _target;
     private Vector2 _direction;
