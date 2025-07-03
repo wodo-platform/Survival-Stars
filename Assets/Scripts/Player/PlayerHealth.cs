@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -40,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         if(other.CompareTag("Health"))
         {
             AddHealth();
-            Destroy(other.gameObject);
+            PoolManager.Instance.ReturnToPool(ObjectType.Health ,other.gameObject);
         }
             
     }

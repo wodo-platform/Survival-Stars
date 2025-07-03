@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if (!other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            PoolManager.Instance.ReturnToPool(ObjectType.Bullet, gameObject);
         }
     }
 }

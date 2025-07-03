@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -24,7 +21,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void Explode()
     {
-        Destroy(gameObject);
+        GameObject gold = PoolManager.Instance.GetFromPool(ObjectType.Gold);
+        gold.transform.position = transform.position;
+        PoolManager.Instance.ReturnToPool(ObjectType.Enemy, gameObject);
     }
 
     private void GetDamage()

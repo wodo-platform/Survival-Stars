@@ -26,8 +26,9 @@ public class PlayerFireController : MonoBehaviour
         mousePosition.z = 0;
         
         Vector2 direction = (mousePosition - transform.position).normalized;
-        
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        GameObject bullet = PoolManager.Instance.GetFromPool(ObjectType.Bullet);
+        bullet.transform.position = transform.position;
         bullet.GetComponent<Bullet>().Init(direction, bulletSpeed);
     }
 }
