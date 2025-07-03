@@ -5,6 +5,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Animator animator;
+    [SerializeField] EnemyHealth health;
     
     private Transform _target;
     private Vector2 _direction;
@@ -16,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if(health.IsDead)
+            return;
         if(_target == null)
             return;
         
@@ -35,18 +38,5 @@ public class EnemyMovement : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Explode();
-        }
-    }
-
-    private void Explode()
-    {
-        Destroy(gameObject);
     }
 }
