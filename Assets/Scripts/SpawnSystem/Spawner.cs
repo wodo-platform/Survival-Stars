@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnRoutine(SpawnConfig config)
     {
+        yield return new WaitUntil(() => GameManager.instance.IsGameStarted);
         WaitForSeconds wait = new WaitForSeconds(config.spawnInterval);
 
         while (!playerHealth.IsDead)
