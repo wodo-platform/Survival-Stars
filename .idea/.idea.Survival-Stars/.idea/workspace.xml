@@ -7,7 +7,11 @@
     <list default="true" id="63840ae1-1ce1-47f4-8bab-4755012a8683" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Survival-Stars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Survival-Stars/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnSystem/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnSystem/Spawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePixelUI/fonts/Font1/pixelfont SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimplePixelUI/fonts/Font1/pixelfont SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +111,7 @@
       <updated>1750682334028</updated>
       <workItem from="1750682335136" duration="1839000" />
       <workItem from="1751540171772" duration="351000" />
+      <workItem from="1764157432729" duration="7564000" />
     </task>
     <servers />
   </component>

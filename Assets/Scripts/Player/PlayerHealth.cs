@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int health = 5;
     [SerializeField] private PlayerAnimation _animation;
+    [SerializeField] private UIController _uiController;
     public bool IsDead { get; private set; }
     private int _currentHealth = 0;
 
@@ -22,12 +23,15 @@ public class PlayerHealth : MonoBehaviour
             IsDead = true;
             SetDead();
         }
+        
+        _uiController.OnHealthChange(_currentHealth);
         Debug.Log("Damaged, current health: " + _currentHealth);
     }
 
     private void SetDead()
     {
         _animation.SetDeadState(isDead: true);
+        GameManager.instance.EndGame();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
             _currentHealth = health;
         }
         
+        _uiController.OnHealthChange(_currentHealth);
         Debug.Log("Added health: " + _currentHealth);
     }
 }
