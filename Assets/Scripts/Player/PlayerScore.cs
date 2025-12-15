@@ -13,6 +13,7 @@ public class PlayerScore : MonoBehaviour
             Score++;
             uiController.OnScoreChange(Score);
             PoolManager.Instance.ReturnToPool(ObjectType.Gold, other.gameObject);
+            SoundManager.instance.PlaySfx(SoundType.CoinCollectSFX);
         }
     }
 

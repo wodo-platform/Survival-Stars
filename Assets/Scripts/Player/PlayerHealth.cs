@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _currentHealth = health;
+        SoundManager.instance.ChangeMusic(SoundType.GameMusic);
     }
 
     private void TakeDamage()
@@ -23,6 +24,10 @@ public class PlayerHealth : MonoBehaviour
             IsDead = true;
             SetDead();
         }
+        else
+        {
+            SoundManager.instance.PlaySfx(SoundType.DamageSFX);
+        }
         
         _uiController.OnHealthChange(_currentHealth);
         Debug.Log("Damaged, current health: " + _currentHealth);
@@ -31,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
     private void SetDead()
     {
         _animation.SetDeadState(isDead: true);
+        SoundManager.instance.ChangeMusic(SoundType.GameOverMusic);
         GameManager.instance.EndGame();
     }
 
@@ -54,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
         {
             _currentHealth = health;
         }
-        
+        SoundManager.instance.PlaySfx(SoundType.HealthCollectSFX);
         _uiController.OnHealthChange(_currentHealth);
         Debug.Log("Added health: " + _currentHealth);
     }
